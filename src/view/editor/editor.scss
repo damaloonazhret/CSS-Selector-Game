@@ -1,0 +1,159 @@
+.editor {
+  position: relative;
+  text-align: left;
+  width: 90%;
+  margin: 0 auto;
+  border: solid 10px rgba(0, 0, 0, 0.35);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+
+  &.shake {
+    animation: shake 0.1s 5;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-0.2vw);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(0.2vw);
+  }
+}
+
+.editor-pane {
+  float: left;
+  width: 50%;
+
+  &:last-child {
+    border-right: solid 1px rgba(255, 255, 255, 0.03);
+    border-bottom: solid 1px rgba(255, 255, 255, 0.03);
+  }
+
+  * {
+    font-family: menlo, monospace;
+    font-size: 14px;
+    line-height: 150%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .input-header {
+    text-align: left;
+    padding: 10px 15px;
+    background: rgba(0, 0, 0, 0.15);
+    border-top: solid 1px rgba(255, 255, 255, 0.05);
+    border-bottom: solid 1px rgba(255, 255, 255, 0.05);
+    border-radius: 2px 2px 0 0;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .file-window {
+    padding: 10px 10px 10px 46px;
+    position: relative;
+    min-height: 432px;
+  }
+
+  .css-view {
+    background: #ffffff;
+    color: #aaa;
+  }
+
+  .file-name {
+    float: right;
+    opacity: 0.5;
+  }
+
+  .line-numbers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: menlo, monospace;
+    padding: 10px 10px;
+    height: 100%;
+    line-height: 150%;
+    text-align: right;
+  }
+
+  input {
+    font-family: menlo, monospace;
+    color: #333;
+    border: none;
+    width: calc(100% - 44px);
+    background: none;
+
+    &.input-strobe {
+      background: rgba(152, 62, 62, 0.22);
+      animation: input 1.1s infinite;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: #555;
+    }
+  }
+}
+
+.markup {
+  .active {
+    color: #00ce03;
+  }
+
+  div {
+    div {
+      padding-left: 20px;
+    }
+  }
+}
+
+.enter-button {
+  background: #ffffff;
+  display: block;
+  border-radius: 2px;
+  padding: 2px 7px;
+  color: #000000;
+  border: solid 3px #d7d7d7;
+  border-width: 1px 1px 6px 1px;
+  position: absolute;
+  right: 13px;
+  font-size: 9px;
+  cursor: pointer;
+  top: 7px;
+  z-index: 999;
+  transition: 0.5s;
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.css-view {
+  .line-numbers {
+    color: #ffffff;
+    background: rgba(19, 13, 13, 0.92);
+  }
+}
+
+.html-view {
+  .line-numbers {
+    color: #666;
+    border-right: solid 1px #333;
+  }
+
+  .file-window {
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
+
+@keyframes input {
+  50% {
+    background: none;
+  }
+}

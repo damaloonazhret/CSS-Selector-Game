@@ -1,0 +1,102 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html::-webkit-scrollbar {
+  width: 1vw;
+}
+
+html::-webkit-scrollbar-track {
+  background: rgb(34, 30, 24);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.11);
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body {
+  background: #2a2a2a;
+  display: grid;
+  grid-template-columns: 65% 35%;
+  color: #ffffff;
+}
+
+h2, h3 {
+  display: flex;
+  justify-content: center;
+  font-size: 2vw;
+  margin: 2px 0 0 0;
+}
+
+h3 {
+  background: rgba(255, 0, 0, 0.2);
+  border-radius: 20px;
+  width: 15vw;
+  margin: 1vh auto 0;
+  cursor: pointer;
+}
+
+h3:hover {
+  text-decoration: underline;
+}
+
+.right-col {
+  background: #171513;
+  height: 100vh;
+  padding: 1vw;
+  width: 32%;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+}
+
+.right-col > aside > li {
+  color: #626262;
+}
+
+.right-col > aside > li > p {
+  color: #bbbbbb;
+  font-size: 2vw;
+  pointer-events: none;
+  display: inline-block;
+  margin-left: 2vw;
+}
+
+.right-col > aside > li > p.active {
+  color: #00ff00;
+  transform: scale(1.15);
+}
+
+.left-col {
+  padding: 1vw;
+}
+
+footer {
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-around;
+  width: 30vw;
+  justify-self: center;
+}
+
+footer p {
+  align-self: center;
+}
+
+footer a {
+  color: white;
+  align-self: center;
+  text-decoration: none;
+}
+
+footer a img {
+  display: block;
+  width: 8vw;
+  height: 8vw;
+}
